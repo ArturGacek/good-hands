@@ -1,0 +1,19 @@
+@import "./settings/colors";
+@import "./settings/fonts";
+
+@import "./src/scss/reset";
+@import "./src/scss/home";
+@import "./src/scss/homeThreeColumens";
+@import "./src/scss/homeHeaders";
+@import "./src/scss/login";
+@import "./src/scss/register";
+@import "./src/scss/organizeCollection";
+@import "./src/scss/giveThingsBack";
+
+
+body {
+  font-family: $font-base;
+  width: 1900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
