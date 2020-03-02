@@ -1,75 +1,55 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import {Link as ScrollLink} from 'react-scroll';
+import Decorations from "../assets/Decoration.svg"
+
 
 const HomeHeaders = () => {
-    return (
-            <section className="main__section">
 
-                    <div className="main__section__photo"> </div>
-                    <div className="main__section__content">
-                        <nav className="main__section__nav">
-                            <div className="main__section__nav__container">
-                                <ul>
-                                    <li>
-                                        <Link to="/loginForm">
-                                            Zaloguj się
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/registerForm">
-                                            Załóż konto
-                                        </Link>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <Link to="/">
-                                            Start
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/">
-                                            O co chodzi
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/">
-                                            O nas
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/">
-                                            Fundacja i organizacje
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/">
-                                            Kontakt
-                                        </Link>
-                                    </li>
-                                </ul>
+    return (
+            <header className="header__section">
+                    <div className="header__photo"> </div>
+                    <div className="header__section__content">
+                        <div className="header__nav__container">
+                            <div className="header__user__panel">
+                                <NavLink to="/loginForm"> Zaloguj się </NavLink>
+                                <NavLink to="/registerForm"> Załóż konto </NavLink>
                             </div>
-                        </nav>
-                        <div className="main__section__way__help">
-                            <h2>Sekcja wyboru formy pomocy</h2>
+                            <nav className="header__section__nav">
                             <ul>
                                 <li>
-                                    <Link to="/loginForm">
-                                        Oddaj rzeczy
-                                    </Link>
+                                    <ScrollLink to="/" >Start</ScrollLink>
                                 </li>
                                 <li>
-                                    <Link to="/loginForm">
-                                        Zorganizuj zbiórkę
-                                    </Link>
+                                    <ScrollLink to="/" spy={true} smooth={true} duration={500}> O co chodzi? </ScrollLink>
+                                </li>
+                                <li>
+                                    <ScrollLink to="/" spy={true} smooth={true} duration={500}> O nas </ScrollLink>
+                                </li>
+                                <li>
+                                    <ScrollLink to="/" spy={true} smooth={true} duration={500}> Fundacja i organizacje </ScrollLink>
+                                </li>
+                                <li>
+                                    <ScrollLink to="/" spy={true} smooth={true} duration={500}> Kontakt </ScrollLink>
                                 </li>
                             </ul>
+                            </nav>
+                        </div>
+                        <div className="header__collections">
+                            <div className="header__collections__title">
+                                <div>Zacznij pomagać!</div>
+                                <div>Oddaj niechciane rzeczy w zaufane ręce</div>
+                            </div>
+                            <img src={Decorations} alt="decoration"/>
+                            <div className="header__collections__buttons">
+                                <button><NavLink to="LoginForm">Oddaj rzeczy</NavLink></button>
+                                <button><NavLink to="LoginForm">Zorganizuj zbiórkę</NavLink></button>
+                            </div>
                         </div>
                     </div>
-
-
-            </section>
+            </header>
     );
 };
 
 export default HomeHeaders;
+

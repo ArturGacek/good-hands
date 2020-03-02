@@ -1,25 +1,94 @@
-.main__section{
+.header__section{
   display: flex;
   justify-content: space-between;
-  .main__section__photo{
+  .header__photo{
     background-image: url("../assets/Home-Hero-Image.jpg");
     background-position: right;
     width: 55rem;
     height: 60rem;
   }
-  .main__section__content{
-    //width: call(118,75rem - 55rem);
-    margin-right: 9rem;
-    display: flex;
-    flex-direction: column;
-    .main__section__nav{
-      .main__section__nav__container{
+  .header__section__content{
+    width: 63.75rem;
+    padding-right: 9rem;
+    .header__nav__container{
+      display: flex;
+      flex-direction: column;
+      align-items:flex-end;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      .header__user__panel{
         display: flex;
-        flex-direction: column;
+        justify-content: flex-end;
+        a{
+          margin-left: 1.25rem;
+          text-decoration: none;
+          color: $color--gray;
+          border: 1px solid transparent;
+          padding: 0.6rem;
+          font-size: 0.8rem;
+          &:hover, &:active{
+            border: 1px solid $color--yellow;
+            padding: 0.6rem;
+            cursor: pointer;
+          }
+        }
+      }
+      .header__section__nav{
+        display: flex;
         ul{
           display: flex;
+          text-decoration: none;
+
+          li{
+            display: flex;
+            margin-left: 2rem;
+            color: #3C3C3C;
+            font-size: 1.1rem;
+            border: 1px solid transparent;
+            padding: 0.6rem 1.25rem ;
+            &:hover, &:active {
+              border: 1px solid $color--gray;
+              padding: 0.6rem 1.25rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    .header__collections{
+      padding-top: 13rem;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      margin-left: 4rem;
+      width: 42rem;
+
+      .header__collections__title{
+        font-size: 2.25rem;
+        color: #3C3C3C;
+        font-weight: 400;
+        padding-bottom: 2rem;
+      }
+      .header__collections__buttons{
+        padding-top: 4rem;
+        display: flex;
+        justify-content: space-evenly;
+        button{
+          width: 19.4rem;
+          text-transform: uppercase;
+          padding: 0.7rem 3rem;
+          font-size: 2.2rem;
+          border: 0.75px solid #3C3C3C;
+          background-color: white;
+          margin: 0 1rem;
+          a{
+            text-decoration: none;
+            color: #3C3C3C;
+            font-weight: 300;
+          }
         }
       }
     }
   }
 }
+
