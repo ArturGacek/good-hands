@@ -9,6 +9,10 @@
 @import "./src/scss/register";
 @import "./src/scss/organizeCollection";
 @import "./src/scss/giveThingsBack";
+@import "./src/scss/aboutUs";
+@import "./src/scss/simpleSteps";
+@import "./src/scss/whoWeHelp";
+@import "./src/scss/contact";
 
 
 body {
@@ -16,4 +20,5 @@ body {
   width: 118.75rem;
   margin: 0 auto;
   box-sizing: border-box;
+  color: $color--lightblack;
 }

@@ -1,0 +1,28 @@
+.three__columns__section{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $color--yellow;
+  .three__columns__section__post{
+    width: 20.9rem;
+    padding-top: 3rem;
+    padding-bottom: 5.3rem;
+    display: flex;
+    flex-direction: column;
+    span{
+      font-size: 5.6rem;
+      text-align: center;
+      line-height: 7.6rem;
+      color:$color--brown;
+    }
+    .three__columns__section__post__title{
+      font-size: 1.1rem;
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: 1.5rem;
+    }
+    div{
+      text-align: center;
+      font-family: $font-alt;
+    }
+  }
+}

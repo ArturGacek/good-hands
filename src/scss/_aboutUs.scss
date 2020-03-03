@@ -1,0 +1,38 @@
+.about__us__container{
+  display: flex;
+  background-color: $color--mainwhite;
+  .about__us__content__container{
+    padding: 0 9.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2{
+      font-size: 2.5rem;
+      padding-bottom: 1.5rem;
+    }
+    .about__us__content{
+      padding-top: 3.5rem;
+      font-size: 1.9rem;
+      text-align: center;
+      padding-bottom: 2.5rem;
+      width: 41rem;
+    }
+    .about__us__signature{
+      display: flex;
+      justify-content: flex-end;
+      width: 41rem;
+      div{
+        width: 13.1rem;
+        height: 9.4rem;
+        background-image: url(../assets/Signature.svg);
+      }
+    }
+  }
+  .about__us__photo{
+    background-image: url("../assets/People.jpg");
+    height: 58.5rem;
+    width: 74rem;
+
+  }
+}
