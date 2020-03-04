@@ -3,8 +3,10 @@ import {HashRouter as Router, Switch, Route} from "react-router-dom";
 
 import './App.css';
 import Home from "./components/Home";
-import Login from "./components/Login";
 import Register from "./components/Register";
+import Login from "./components/Login";
+import LogOut from "./components/LogOut";
+
 
 
 function App() {
@@ -13,8 +15,9 @@ function App() {
           <React.Fragment>
               <Switch>
                   <Route exact path="/" component={Home}/>
-                  <Route path="/loginForm" component={Login}/>
-                  <Route path="/registerForm" component={Register}/>
+                  <Route path="/LoginForm" component={Login}/>
+                  <Route path="/RegisterForm" component={Register}/>
+                  <Route path="/LogOut" component={LogOut}/>
               </Switch>
           </React.Fragment>
       </Router>

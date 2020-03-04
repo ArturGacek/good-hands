@@ -1,0 +1,89 @@
+.login__page{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .login__page__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+      font-size: 2.5rem;
+      font-weight: 600;
+      padding-bottom: 1.5rem;
+    }
+    .login__form__container{
+      margin-top: 3.75rem;
+      padding-top: 2.5rem;
+      width: 24rem;
+      height: 15rem;
+      background: $color--mainwhite;
+      .login__form{
+        .login__email__input{
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          padding-left: 5rem;
+          padding-bottom: 2rem;
+          label {
+            font-weight: bold;
+            padding-bottom: 0.75rem;
+          }
+          input {
+            font-size: 1.1rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid $color--gray;
+
+            &::placeholder {
+              color: #3C3C3C26;
+            }
+          }
+        }
+        .login__password__input{
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          padding-left: 5rem;
+          label {
+            font-weight: bold;
+            padding-bottom: 0.75rem;
+          }
+          input {
+            font-size: 1.1rem;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid $color--gray;
+
+            &::placeholder {
+              color: #3C3C3C26;
+            }
+          }
+        }
+      }
+    }
+    .login__buttons{
+      display: flex;
+      justify-content: space-between;
+      width: 31.5rem;
+      padding-top: 4.4rem;
+      button{
+        height: 3rem;
+        width: 7.3rem;
+        font-size: 1.1rem;
+        background: transparent;
+        border: 0.75px solid transparent;
+        color: $color--lightblack;
+        &:hover, &:active{
+          cursor: pointer;
+          border: 0.75px solid $color--gray;
+        }
+        a{
+          text-decoration: none;
+          color: $color--lightblack;
+        }
+      }
+    }
+  }
+}

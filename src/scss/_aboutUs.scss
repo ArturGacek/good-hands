@@ -1,6 +1,7 @@
 .about__us__container{
   display: flex;
   background-color: $color--mainwhite;
+  width: 118.75rem;
   .about__us__content__container{
     padding: 0 9.5rem;
     display: flex;
@@ -10,6 +11,7 @@
     h2{
       font-size: 2.5rem;
       padding-bottom: 1.5rem;
+      font-weight: 600;
     }
     .about__us__content{
       padding-top: 3.5rem;

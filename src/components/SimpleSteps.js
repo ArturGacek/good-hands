@@ -17,7 +17,7 @@ const SimpleSteps = () => {
                 <div className="simpleSteps__content">
                     <img src={Icon1} alt="T-shirt"/>
                     <span>Wybierz rzeczy</span>
-                    <div className="underline"> </div>
+                    <div className="simpleSteps__underline"> </div>
                     <div>ubrania, zabawki, sprzęt i inne</div>
                 </div>
                 <div className="simpleSteps__content">

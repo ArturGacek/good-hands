@@ -12,8 +12,8 @@ const HomeHeaders = () => {
                     <div className="header__section__content">
                         <div className="header__nav__container">
                             <div className="header__user__panel">
-                                <NavLink to="/loginForm"> Zaloguj się </NavLink>
-                                <NavLink to="/registerForm"> Załóż konto </NavLink>
+                                <NavLink to="/LoginForm"> Zaloguj się </NavLink>
+                                <NavLink to="/RegisterForm"> Załóż konto </NavLink>
                             </div>
                             <nav className="header__section__nav">
                             <ul>

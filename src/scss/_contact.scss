@@ -19,81 +19,87 @@
   }
 
   .footer__contact__container{
-    width: 33rem;
-    display: flex;
-    flex-wrap: wrap;
-    .contact__name__input {
-      display: flex;
-      flex-direction: column;
-      width: 16rem;
 
-      label {
-        font-weight: bold;
-        padding-bottom: 0.75rem;
-      }
-      input {
-        font-size: 1.1rem;
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid $color--gray;
-        &::placeholder{
-          color: #3C3C3C26;
-        }
-      }
-    }
-    .contact__email__input{
-      display: flex;
-      flex-direction: column;
-      width: 16rem;
-      padding-bottom: 0.75rem;
-      padding-left: 1rem;
-      label {
-        font-weight: bold;
-        padding-bottom: 0.75rem;
-      }
-      input {
-        font-size: 1.1rem;
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid $color--gray;
-        &::placeholder{
-          color: #3C3C3C26;
-        }
-      }
-    }
-
-    .contact__textarea__input{
-      display: flex;
-      flex-direction: column;
-      width:33rem;
-      padding-top: 2.5rem;
-      label{
-        font-weight: bold;
-        padding-bottom: 0.75rem;
-      }
-      textarea{
-        width:33rem;
-        background: transparent;
-        border: none;
-        font-size: 1.1rem;
-        resize: none;
-        border-bottom: 1px solid $color--gray;
-        &::placeholder{
-          color: #3C3C3C26;
-        }
-      }
-    }
-    .contact__button__container{
+    form{
       width: 33rem;
       display: flex;
-      justify-content: flex-end;
-      padding-top: 3rem;
-      button{
-        font-size: 1.1rem;
-        background: transparent;
-        width: 9rem;
-        height: 3rem;
-        border: 0.75px solid $color--gray;
+      flex-wrap: wrap;
+      .contact__name__input {
+        display: flex;
+        flex-direction: column;
+        width: 16rem;
+
+        label {
+          font-weight: bold;
+          padding-bottom: 0.75rem;
+        }
+        input {
+          font-size: 1.1rem;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid $color--gray;
+          &::placeholder{
+            color: #3C3C3C26;
+          }
+        }
+      }
+      .contact__email__input{
+        display: flex;
+        flex-direction: column;
+        width: 16rem;
+        padding-bottom: 0.75rem;
+        padding-left: 1rem;
+        label {
+          font-weight: bold;
+          padding-bottom: 0.75rem;
+        }
+        input {
+          font-size: 1.1rem;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid $color--gray;
+          &::placeholder{
+            color: #3C3C3C26;
+          }
+        }
+      }
+
+      .contact__textarea__input{
+        display: flex;
+        flex-direction: column;
+        width:33rem;
+        padding-top: 2.5rem;
+        label{
+          font-weight: bold;
+          padding-bottom: 0.75rem;
+        }
+        textarea{
+          width:33rem;
+          background: transparent;
+          border: none;
+          font-size: 1.1rem;
+          resize: none;
+          border-bottom: 1px solid $color--gray;
+          &::placeholder{
+            color: #3C3C3C26;
+          }
+        }
+      }
+      .contact__button__container{
+        width: 33rem;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 3rem;
+        button{
+          font-size: 1.1rem;
+          background: transparent;
+          width: 9rem;
+          height: 3rem;
+          border: 0.75px solid $color--gray;
+          &:hover, &:active{
+            cursor: pointer;
+          }
+        }
       }
     }
   }

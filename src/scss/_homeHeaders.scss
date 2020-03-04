@@ -28,7 +28,6 @@
           font-size: 0.8rem;
           &:hover, &:active{
             border: 1px solid $color--yellow;
-            padding: 0.6rem;
             cursor: pointer;
           }
         }
@@ -63,9 +62,9 @@
       width: 42rem;
 
       .header__collections__title{
-        font-size: 2.25rem;
-        font-weight: 400;
+        font-size: 2.1rem;
         padding-bottom: 2rem;
+        font-weight: 600;
       }
       .header__collections__buttons{
         padding-top: 4rem;
@@ -82,6 +81,7 @@
           a{
             text-decoration: none;
             font-weight: 300;
+            color: $color--lightblack;
           }
         }
       }
