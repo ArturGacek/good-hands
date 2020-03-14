@@ -21,20 +21,15 @@ const Contact = () => {
             errors.push("Please put name. Only letters, one word.");
         }
 
-        if (email === "" || !email.match(emailRegex)) {
-            errors.push("Email should be valid.");
-        }
+        // if (email === "" || !email.match(emailRegex)) {
+        //     errors.push("Email should be valid.");
+        // }
 
         if (message.length < 120) {
             errors.push("Message should be at least 120 characters long.");
         }
 
 
-        setErrors(errors);
-        setSuccess(false);
-        if (errors.length > 0) {
-            return false;
-        }
 
         const obj = {
             name,
@@ -50,20 +45,29 @@ const Contact = () => {
             }
         })
             .then(response => {
-                if (response.ok) {
                     return response.json();
-                } else {
-                    throw new Error("Błąd sieci!");
-                }
+
             })
             .then(data => {
                 if (data.status === "success") {
                     setSuccess(true);
+                    setName("");
+                    setEmail("");
+                    setMessage("");
+                } else if (data.status === "error") {
+                    console.warn(data.errors)
                 }
             })
             .catch(err => {
                 console.log(err);
             });
+
+        setErrors(errors);
+        setSuccess(false);
+        if (errors.length > 0) {
+            return false;
+        }
+
     };
     return (
         <div className="footer__container">
@@ -93,8 +97,12 @@ const Contact = () => {
                         <button type="submit">Wyślij</button>
                     </div>
                 </form>
-                {success && <h2>Form sent!</h2>}
-                {errors.map(error => <p key={error}>{error}</p>)}
+                <div className="contact__success__container">
+                    <span>{success && <h2>Form sent!</h2>}</span>
+                </div>
+                <div className="contact__error__container">
+                    {errors.map(error => <p key={error}>{error}</p>)}
+                </div>
             </div>
             <div className="contact__rights__and__icons">
                     <span>

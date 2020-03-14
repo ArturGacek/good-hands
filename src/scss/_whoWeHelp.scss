@@ -39,7 +39,7 @@
     justify-content: space-between;
     padding: 2rem 1.5rem 2rem 0;
     border-bottom: 1px solid $color--lightblack;
-    &:nth-last-child(1){
+    &:nth-last-child(3n-1){
       border-bottom: 1px solid transparent;
       padding: 2rem 1.5rem 4rem 0;
     }
@@ -61,6 +61,24 @@
         font-family: $font-alt;
         font-weight: 300;
         font-size: 1.1rem;
+      }
+    }
+  }
+  .page__numbers{
+    display: flex;
+    li{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1rem;
+      text-decoration: none;
+      width: 2.5rem;
+      height: 3.1rem;
+      border: 1px solid transparent;
+      font-size: 1.1rem;
+      &:hover, &:active{
+        border: 1px solid $color--lightblack;
+        cursor: pointer;
       }
     }
   }

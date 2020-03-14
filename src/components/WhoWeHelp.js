@@ -3,7 +3,6 @@ import Decorations from "../assets/Decoration.svg";
 import {NoGovernmentalOrganizations} from "../components/NoGovernmentalOrganizations";
 import {LocalCollections} from "../components/LocalCollections";
 import {Fundations} from "../components/Fundations";
-// import Pagination from "react-js-pagination";
 
 
 class WhoWeHelp extends Component {
@@ -11,17 +10,17 @@ class WhoWeHelp extends Component {
         super(props);
         this.state = {
             data: Fundations,
-            // currentPage: 1,
-            // dataPerPage: 3
+            currentPage: 1,
+            dataPerPage: 3
         };
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    // handleClick(event) {
-    //     this.setState({
-    //         currentPage: Number(event.target.id)
-    //     });
-    // }
+    handleClick(event) {
+        this.setState({
+            currentPage: Number(event.target.id)
+        });
+    }
 
     changeOrganization = data => {
         this.setState({
@@ -30,15 +29,44 @@ class WhoWeHelp extends Component {
     };
 
     render() {
-        // const { data, currentPage, dataPerPage } = this.state;
-        // // Logic for displaying todos
-        // const indexOfLastData = currentPage * dataPerPage;
-        // const indexOfFirstData = indexOfLastData - dataPerPage;
-        // const currentData = data.slice(indexOfFirstData, indexOfLastData);
-        //
+
+        const { data, currentPage, dataPerPage } = this.state;
+
+        // Logic for displaying data
+        const indexOfLastTodo = currentPage * dataPerPage;
+        const indexOfFirstTodo = indexOfLastTodo - dataPerPage;
+        const currentData = data.slice(indexOfFirstTodo, indexOfLastTodo);
+
         // const renderData = currentData.map((data, index) => {
         //     return <li key={index}>{data}</li>;
         // });
+
+        // Logic for displaying page numbers
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(data.length / dataPerPage); i++) {
+            pageNumbers.push(i);
+        }
+
+        let style;
+
+        if (pageNumbers.length === 1) {
+            style = {
+                visibility: 'hidden'
+            };
+        }
+
+        const renderPageNumbers = pageNumbers.map(number => {
+            return (
+                <li
+                    key={number}
+                    id={number}
+                    onClick={this.handleClick}
+                >
+                    {number}
+                </li>
+            );
+        });
+
         return (
             <section className="organizations__container">
                 <h4>Komu pomagamy?</h4>
@@ -59,7 +87,7 @@ class WhoWeHelp extends Component {
                     współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
                     czego potrzebują.
                 </span>
-                {this.state.data.map(data => {
+                {currentData.map(data => {
                     return (
                         <div className="organizations__list" key={data.id}>
                             <div className="organizations__list__left">
@@ -72,6 +100,9 @@ class WhoWeHelp extends Component {
                         </div>
                     );
                 })}
+                <ul className="page__numbers" style={style}>
+                    {renderPageNumbers}
+                </ul>
             </section>
         );
     }

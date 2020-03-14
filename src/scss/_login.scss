@@ -40,6 +40,11 @@
               color: #3C3C3C26;
             }
           }
+          .error{
+            height: 0.1rem;
+            color: red;
+            font-size: 0.8rem;
+          }
         }
         .login__password__input{
           display: flex;
@@ -60,28 +65,36 @@
               color: #3C3C3C26;
             }
           }
+          .error{
+            height: 0.1rem;
+            color: red;
+            font-size: 0.8rem;
+          }
         }
-      }
-    }
-    .login__buttons{
-      display: flex;
-      justify-content: space-between;
-      width: 31.5rem;
-      padding-top: 4.4rem;
-      button{
-        height: 3rem;
-        width: 7.3rem;
-        font-size: 1.1rem;
-        background: transparent;
-        border: 0.75px solid transparent;
-        color: $color--lightblack;
-        &:hover, &:active{
-          cursor: pointer;
-          border: 0.75px solid $color--gray;
-        }
-        a{
-          text-decoration: none;
-          color: $color--lightblack;
+        .login__buttons{
+          position: relative;
+          top: 0;
+          left: -3.7rem;
+          display: flex;
+          justify-content: space-between;
+          width: 31.5rem;
+          padding-top: 6.4rem;
+          button{
+            height: 3rem;
+            width: 7.3rem;
+            font-size: 1.1rem;
+            background: transparent;
+            border: 0.75px solid transparent;
+            color: $color--lightblack;
+            &:hover, &:active{
+              cursor: pointer;
+              border: 0.75px solid $color--gray;
+            }
+            a{
+              text-decoration: none;
+              color: $color--lightblack;
+            }
+          }
         }
       }
     }
