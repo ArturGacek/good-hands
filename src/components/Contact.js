@@ -7,27 +7,31 @@ const Contact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
     const [success, setSuccess] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const errors = [];
+        const errors = {};
 
-        let emailRegex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g;
-        let letters = /^[A-Za-z]+$/;
+        // let emailRegex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g;
+        // let letters = /^[A-Za-z]+$/;
 
-        if (name === "" || !name.match(letters)) {
-            errors.push("Please put name. Only letters, one word.");
-        }
+        // if (name === "" || !name.match(letters)) {
+        //     errors.name = "Please put name. Only letters, one word.";
+        // }
 
         // if (email === "" || !email.match(emailRegex)) {
         //     errors.push("Email should be valid.");
         // }
 
-        if (message.length < 120) {
-            errors.push("Message should be at least 120 characters long.");
-        }
+        // if (message.length < 120) {
+        //     errors.message = "Message should be at least 120 characters long.";
+        // }
 
 
 
@@ -36,6 +40,14 @@ const Contact = () => {
             email,
             message
         };
+
+        for (let error of Object.values(errors)) {
+            if (error) {
+                setErrors(errors);
+                return
+            }
+
+        }
 
         fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
             method: "POST",
@@ -55,11 +67,18 @@ const Contact = () => {
                     setEmail("");
                     setMessage("");
                 } else if (data.status === "error") {
-                    console.warn(data.errors)
+                    console.warn(data.errors);
+                    const errors = {};
+                    for (let error of data.errors) {
+                        console.log(error);
+                        errors[error.param] = error.msg
+                    }
+
+                    setErrors(errors)
                 }
             })
             .catch(err => {
-                console.log(err);
+                console.log(err)
             });
 
         setErrors(errors);
@@ -82,16 +101,25 @@ const Contact = () => {
                         <label htmlFor="name">Wpisz swoje imię</label>
                         <input type="text" id="name" placeholder="Krzysztof"
                                value={name} onChange={e => setName(e.target.value)} required/>
+                        <div className="error">
+                            <p>{errors.name}</p>
+                        </div>
                     </div>
                     <div className="contact__email__input">
                         <label htmlFor="email">Wpisz swój email</label>
                         <input type="text" id="email" placeholder="abc@xyz.pl"
                                value={email} onChange={e => setEmail(e.target.value)} required/>
+                        <div className="error">
+                            <p>{errors.email}</p>
+                        </div>
                     </div>
                     <div className="contact__textarea__input">
                         <label htmlFor="textarea">Wpisz swoją wiadomość</label>
                         <textarea rows="4" id="textarea" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                   value={message} onChange={e => setMessage(e.target.value)} required/>
+                        <div className="error">
+                                  <p>{errors.message}</p>
+                        </div>
                     </div>
                     <div className="contact__button__container">
                         <button type="submit">Wyślij</button>
@@ -99,9 +127,6 @@ const Contact = () => {
                 </form>
                 <div className="contact__success__container">
                     <span>{success && <h2>Form sent!</h2>}</span>
-                </div>
-                <div className="contact__error__container">
-                    {errors.map(error => <p key={error}>{error}</p>)}
                 </div>
             </div>
             <div className="contact__rights__and__icons">
