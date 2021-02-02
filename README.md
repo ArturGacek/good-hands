@@ -3,7 +3,7 @@
 <div>experience with instant visual updates learning applications.</div>
 <br>
 <div> Link to page:</div>
-<div>https://youthful-babbage-4e8a0d.netlify.com/#/</div>
+<div>https://good-hands.netlify.app/#/</div>
 <br>
 <div>Features:</div>
 <div>Pure React, SASS/CSS </div>
